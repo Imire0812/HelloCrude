@@ -9,11 +9,11 @@ import java.util.List;
 @Repository
 public class EventRepository {
     static List<Event> events = new ArrayList<>(Arrays.asList(
-            new Event("Opera", "London"),
-            new Event("Violin concert", "Prague"),
-            new Event("Jazz concert", "Berlin"),
-            new Event("Art exhibition", "London"),
-            new Event("Royal Variety Show", "Paris")
+            new Event("Opera", "London", 50.0),
+            new Event("Violin concert", "Prague", 35.0),
+            new Event("Jazz concert", "Berlin", 20.0),
+            new Event("Art exhibition", "London", 60.5),
+            new Event("Royal Variety Show", "Paris", 65.0)
     ));
 
     public List<Event> findAll() {
@@ -28,6 +28,7 @@ public class EventRepository {
         Event updEvent = events.get(id);
         updEvent.setName(event.getName());
         updEvent.setCity(event.getCity());
+        updEvent.setPrice(event.getPrice());
     }
 
     public Event findById(int id) {

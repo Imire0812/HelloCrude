@@ -15,6 +15,7 @@
     <tr th:each="event : ${events}">
         <td th:utext="${event.name}">...</td>
         <td th:utext="${event.city}">...</td>
+        <td th:utext="${event.price}">...</td>
         <td><a th:href="@{/update/{id}(id=${events.indexOf(event)})}">edit</a></td>
         <td>
             <form action="/delete" th:method="DELETE">
